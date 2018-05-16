@@ -10,7 +10,7 @@ How to add it to Chrome ?
 1. Download Repository.
 2. Extract into a folder.
 3. Create an API key on https://www.omdbapi.com/
-4. Add your API key on myscript.js
+4. Add your API key in `myscript.js`
 3. Go to chrome Settings.
 4. Click on Extensions.
 5. Enable Developer Mode
