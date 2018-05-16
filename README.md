@@ -17,3 +17,7 @@ How to add it to Chrome ?
 7. Click on "Load Unpacked Extension" and Select the folder which was extracted in Step 2
 8. Go to the https://www.mubi.com and enjoy your ratings
 
+TODO
+---
+
+1. Send year, to fetch the correct movie when there is more than one of them with the same title
