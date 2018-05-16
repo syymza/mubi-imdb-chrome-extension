@@ -1,0 +1,16 @@
+{
+  "name": "Mubi + IMDB Chrome Extension",
+  "description": "Show IMDB Ratings on Mubi",
+  "version": "1",
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mubi.com/*"
+      ],
+      "js": [
+        "myscript.js"
+      ]
+    }
+  ]
+}
