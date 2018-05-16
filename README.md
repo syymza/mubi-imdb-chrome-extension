@@ -4,7 +4,7 @@ This is a chrome extension to add IMDB rating of the each Mubi.com movie next to
 
 ![Example](https://github.com/syymza/mubi-imdb-chrome-extension/raw/master/img/screenshot.png)
 
-How to add Into Chrome ?
+How to add it to Chrome ?
 ---
 
 1. Download Repository.
