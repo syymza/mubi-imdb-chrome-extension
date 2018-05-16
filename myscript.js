@@ -6,22 +6,20 @@ const getMovieRating = async (title) => {
 	return data.imdbRating;
 }
 
-const editNodes = async (nodes) => {
-	for (let i = 0; i < nodes.length; i++) {
-		const title = nodes[i].innerHTML;
-		const rating = await getMovieRating(title);
-		if (rating) {
-			nodes[i].innerHTML = `${title}: ${rating} ⭐️`;
-		}
-	}
-}
-
 (async () => {
-	const movieTitleNodes1 = document.getElementsByClassName('full-width-tile__title');
-	await editNodes(movieTitleNodes1);
-	const movieTitleNodes2 = document.getElementsByClassName('film-title');
-	await editNodes(movieTitleNodes2);
-	const movieTitleNodes3 = document.getElementsByClassName('film-show__titles__title');
-	await editNodes(movieTitleNodes3);
+	const movieTitleNodes = [
+		...document.getElementsByClassName('film-show__titles__title'),
+		...document.getElementsByClassName('full-width-tile__title'),
+		...document.getElementsByClassName('film-title')
+	];
+
+	const ratings = await Promise.all(movieTitleNodes.map(node => node.innerHTML).map(async title => getMovieRating(title)));
+	movieTitleNodes.forEach((node, index) => {
+		const title = node.innerHTML;
+		const rating = ratings[index];
+		if (rating) {
+			node.innerHTML = `${title}: ${rating} ⭐️`;
+		}
+	})
 })()
 
